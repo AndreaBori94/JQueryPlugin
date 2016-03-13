@@ -1,0 +1,21 @@
+<script src="jsl.js"></script>
+<div id="ciccio">Ciao</div>
+
+
+<script>	
+	jsl.load(function(){
+		console.log(jsl);
+		var e = jsl.get("#ciccio");
+		e.html("changed");
+		
+		e.on("click", function(){
+			console.log("cl");
+		});
+		if ( !jsl.exist("#ciccio2") ) {
+			console.log("non esiste");
+		}
+		
+		jsl.session_save("Ciao", "ciao");
+		console.log ( jsl.session_load("Ciao"));
+	});
+</script>
